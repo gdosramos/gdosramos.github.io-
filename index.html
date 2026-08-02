@@ -1,42 +1,651 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recursos Académicos — Gerardo Dos Ramos</title>
-  <style>
-    body { font-family: system-ui, -apple-system, sans-serif; max-width: 760px;
-           margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #1a1a1a; }
-    header { border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 28px; }
-    h1 { margin: 0 0 4px; }
-    .sub { color: #666; margin: 0; }
-    .card { border: 1px solid #e2e2e2; border-radius: 10px;
-            padding: 18px 20px; margin: 14px 0; transition: box-shadow .15s; }
-    .card:hover { box-shadow: 0 2px 12px rgba(0,0,0,.08); }
-    .card h2 { margin: 0 0 6px; font-size: 1.15rem; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer { margin-top: 40px; color: #999; font-size: .85rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerardo Dos Ramos — Data &amp; Analytics · BI, ML e IA</title>
+
+<meta name="description" content="Portafolio de Gerardo Dos Ramos, Data & Analytics Manager. Quince años construyendo indicadores, modelos y automatizaciones en retail, consumo masivo, pharma y food service.">
+<meta name="author" content="Gerardo Dos Ramos">
+<meta name="theme-color" content="#eef0f3">
+<link rel="canonical" href="https://gerardodosramos.com/">
+
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://gerardodosramos.com/">
+<meta property="og:title" content="Gerardo Dos Ramos — Data &amp; Analytics · BI, ML e IA">
+<meta property="og:description" content="Quince años convirtiendo datos en decisiones. Portafolio de trabajo en BI, machine learning y automatización.">
+<meta property="og:image" content="https://gerardodosramos.com/assets/gerardo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gerardo Dos Ramos — Data &amp; Analytics · BI, ML e IA">
+<meta name="twitter:description" content="Quince años convirtiendo datos en decisiones. Portafolio de trabajo en BI, machine learning y automatización.">
+<meta name="twitter:image" content="https://gerardodosramos.com/assets/gerardo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#17172e; --paper:#eef0f3; --panel:#fafbfc;
+    --line:#d7dade; --line-2:#c3c7cd; --muted:#5a5a6e;
+    --accent:#a8660d; --accent-soft:#f4e6cd; --link:#3d3b96;
+    --maxw:1080px; --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:80px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4,nav,.btn,.eyebrow,.brand,.num,.chip{font-family:"Space Grotesk",system-ui,sans-serif}
+  .mono,.eyebrow,.kicker,.cap,.floattag,.step-n,.note,.chip,.stack span{font-family:"Space Mono",ui-monospace,monospace}
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:12px 18px;z-index:100}
+  .skip:focus{left:0}
+  a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--link);outline-offset:3px;border-radius:4px}
+
+  /* ---------- NAV ---------- */
+  header.nav{position:sticky;top:0;z-index:40;background:rgba(238,240,243,.88);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{font-weight:700;font-size:15.5px;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+  .brand .dot{color:var(--accent)}
+  .brand small{display:block;font-family:"Space Mono",monospace;font-size:9.5px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400;margin-top:1px}
+  nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500;align-items:center}
+  nav a{color:var(--ink);padding:6px 0;position:relative}
+  nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);
+    transform:scaleX(0);transform-origin:left;transition:transform .2s}
+  nav a:hover{text-decoration:none}
+  nav a:hover::after,nav a[aria-current="true"]::after{transform:scaleX(1)}
+  .burger{display:none;background:none;border:1.5px solid var(--line-2);border-radius:8px;
+    width:42px;height:38px;cursor:pointer;align-items:center;justify-content:center;padding:0}
+  .burger span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--ink);transition:.2s}
+  .burger span::before{top:-5px}.burger span::after{top:5px}
+  .burger[aria-expanded="true"] span{background:transparent}
+  .burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+  .burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+  /* ---------- SECCIONES ---------- */
+  .sec{padding:84px 0;position:relative}
+  .sec--panel{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .head{max-width:680px;margin-bottom:44px}
+  .eyebrow{font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent);
+    font-weight:700;margin:0 0 14px;display:flex;align-items:center;gap:9px}
+  .eyebrow::before{content:"";width:22px;height:2px;background:currentColor;flex:none}
+  h2{font-size:clamp(1.62rem,3.2vw,2.2rem);line-height:1.16;letter-spacing:-.018em;font-weight:600;margin:0 0 16px}
+  .head p{color:var(--muted);margin:0;font-size:1.03rem}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:44px 44px;background-position:center}
+  .hero .mesh{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:.5}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+    background:radial-gradient(ellipse at 38% 46%,transparent 20%,var(--paper) 86%)}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center;padding:78px 0}
+  h1{font-size:clamp(1.95rem,4.2vw,3.1rem);line-height:1.08;letter-spacing:-.025em;font-weight:600;margin:0 0 22px}
+  h1 .mark{background:linear-gradient(transparent 56%,var(--accent-soft) 56%);padding:0 3px}
+  .lede{font-size:1.08rem;color:var(--muted);max-width:530px;margin:0}
+  .lede + .lede{margin-top:14px}
+  .lede b{color:var(--ink);font-weight:600}
+  .cta-row{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;
+    padding:12px 21px;border-radius:9px;cursor:pointer;border:1.5px solid var(--ink);
+    transition:transform .14s,box-shadow .14s,background .14s,color .14s;text-decoration:none}
+  .btn:hover{text-decoration:none;transform:translateY(-2px)}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{box-shadow:0 10px 26px rgba(23,23,46,.22)}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .btn .ar{transition:transform .14s}
+  .btn:hover .ar{transform:translateX(3px)}
+  .proof{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px 10px}
+  .chip{font-size:11.5px;color:var(--ink);border:1px solid var(--line-2);
+    border-radius:100px;padding:5px 12px;white-space:nowrap}
+  .chip.on{border-color:var(--accent);color:var(--accent)}
+
+  .portrait{position:relative;justify-self:center;width:100%;max-width:360px;margin:0}
+  .portrait .frame{position:relative;border-radius:16px;overflow:hidden;
+    box-shadow:0 20px 54px -22px rgba(23,23,46,.4);border:1px solid var(--line);background:var(--line)}
+  .portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 14%}
+  .portrait .frame::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,transparent 54%,rgba(23,23,46,.13) 100%)}
+  .portrait .bracket{position:absolute;top:-9px;left:-9px;width:44px;height:44px;
+    border-top:3px solid var(--accent);border-left:3px solid var(--accent);border-radius:5px 0 0 0}
+  .cap{margin-top:15px;font-size:11.5px;color:var(--muted);line-height:1.55}
+  .cap b{color:var(--ink)}
+
+  /* ---------- BANDA ---------- */
+  .band{border-bottom:1px solid var(--line);background:var(--panel);padding:18px 0}
+  .band-inner{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;
+    font-family:"Space Mono",monospace;font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .band-inner b{color:var(--ink);font-weight:700}
+  .band-inner .d{color:var(--accent)}
+
+  /* ---------- ENFOQUE ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink)}
+  .step{padding:24px 22px 26px;border-right:1px solid var(--line);position:relative;transition:background .2s}
+  .step:last-child{border-right:0}
+  .step:hover{background:var(--panel)}
+  .step::before{content:"";position:absolute;top:-1.5px;left:0;height:1.5px;width:0;background:var(--accent);transition:width .35s ease}
+  .step:hover::before{width:100%}
+  .step-n{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em}
+  .step h3{font-size:1.08rem;margin:11px 0 9px;letter-spacing:-.012em;font-weight:600}
+  .step p{margin:0;font-size:.93rem;color:var(--muted)}
+
+  /* ---------- TRABAJO ---------- */
+  .cases{display:grid;gap:18px}
+  .case{display:grid;grid-template-columns:112px 1fr 180px;gap:26px;align-items:start;
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;
+    transition:border-color .18s,transform .18s,box-shadow .18s}
+  .case:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 12px 30px -18px rgba(23,23,46,.4)}
+  .kicker{font-size:10.5px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);line-height:1.5}
+  .kicker b{display:block;color:var(--accent);font-weight:700;margin-bottom:3px}
+  .case h3{font-size:1.12rem;margin:0 0 12px;font-weight:600;letter-spacing:-.012em}
+  .case dl{margin:0;display:grid;gap:9px}
+  .case dt{font-family:"Space Mono",monospace;font-size:10px;text-transform:uppercase;
+    letter-spacing:.1em;color:var(--muted);margin-bottom:1px}
+  .case dd{margin:0;font-size:.95rem;color:var(--muted)}
+  .outcome{border-left:2px solid var(--line);padding-left:20px}
+  .num{font-size:2.4rem;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--accent)}
+  .outcome p{margin:9px 0 0;font-size:.87rem;color:var(--muted);line-height:1.5}
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+  .strip .num{font-size:1.85rem;color:var(--ink)}
+  .strip .num em{font-style:normal;color:var(--accent)}
+  .strip p{margin:8px 0 0;font-size:.86rem;color:var(--muted);font-family:"Space Mono",monospace;line-height:1.55}
+  .note{margin-top:28px;font-size:11.5px;color:var(--muted);max-width:620px;line-height:1.7}
+
+  /* ---------- CLASES ---------- */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;padding:24px;
+    background:var(--paper);color:var(--ink);transition:border-color .18s,transform .18s}
+  a.card:hover{border-color:var(--accent);transform:translateY(-3px);text-decoration:none}
+  .card .k{font-family:"Space Mono",monospace;font-size:10.5px;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.11em}
+  .card h3{font-size:1rem;margin:9px 0 8px;font-weight:600;letter-spacing:-.012em}
+  .card p{color:var(--muted);font-size:.91rem;margin:0}
+  .card .go{margin-top:auto;padding-top:16px;font-family:"Space Mono",monospace;font-size:10.5px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+
+  /* ---------- PERFIL (oscuro) ---------- */
+  #perfil{background:var(--ink);color:#e9e9f2}
+  #perfil .eyebrow{color:#dda94f}
+  #perfil h2{color:#fff}
+  .bio{color:#c4c4d8;max-width:640px;margin:0;font-size:1.04rem}
+  .bio + .bio{margin-top:16px}
+  .prof-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}
+  .tl{list-style:none;margin:0;padding:0;border-left:1px solid rgba(255,255,255,.18)}
+  .tl li{position:relative;padding:0 0 22px 24px}
+  .tl li::before{content:"";position:absolute;left:-4.5px;top:8px;width:8px;height:8px;border-radius:50%;background:#dda94f}
+  .tl .y{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.1em;color:#9a9ab4;text-transform:uppercase}
+  .tl .t{display:block;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:.97rem;color:#fff;margin-top:4px}
+  .tl .s{display:block;font-size:.89rem;color:#b0b0c8;margin-top:3px}
+  .quote{border-left:3px solid #dda94f;padding:6px 0 6px 24px;max-width:700px;margin-top:40px}
+  .quote p{font-size:1.36rem;line-height:1.32;color:#fff;font-weight:500;margin:0;
+    letter-spacing:-.015em;font-family:"Space Grotesk",sans-serif}
+  .stack-wrap{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14)}
+  .stack-wrap h4{margin:0 0 13px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:#9a9ab4;font-family:"Space Mono",monospace;font-weight:400}
+  .stack{display:flex;flex-wrap:wrap;gap:7px}
+  .stack span{font-size:11.5px;border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:5px 12px;color:#d7d7e6}
+
+  /* ---------- CONTACTO ---------- */
+  #contacto .head{max-width:620px}
+  .avail{display:inline-flex;align-items:center;gap:9px;font-family:"Space Mono",monospace;
+    font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--line-2);border-radius:100px;padding:6px 14px;margin-bottom:22px}
+  .avail .dot{width:7px;height:7px;border-radius:50%;background:#2f9e63;flex:none}
+  .contact-links{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px}
+
+  /* ---------- FOOTER ---------- */
+  footer.foot{border-top:1px solid var(--line);padding:32px 0;font-size:12.5px;color:var(--muted)}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .foot .mono{font-family:"Space Mono",monospace}
+  .foot a{color:var(--muted)}
+
+  /* ---------- REVEAL ---------- */
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .rv.d1{transition-delay:.06s}.rv.d2{transition-delay:.14s}.rv.d3{transition-delay:.22s}
+  .rv.d4{transition-delay:.3s}.rv.d5{transition-delay:.38s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .steps{grid-template-columns:1fr 1fr}
+    .step{border-bottom:1px solid var(--line)}
+    .step:nth-child(2){border-right:0}
+    .prof-grid{grid-template-columns:1fr;gap:32px}
+    .case{grid-template-columns:1fr;gap:18px}
+    .outcome{border-left:0;border-top:1px solid var(--line);padding:16px 0 0}
+    .cards3{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;padding:50px 0 60px}
+    .portrait{order:-1;max-width:280px;justify-self:start}
+    nav ul{position:fixed;inset:64px 0 auto;flex-direction:column;align-items:stretch;gap:0;
+      background:var(--paper);border-bottom:1px solid var(--line);padding:8px 24px 20px;
+      display:none;box-shadow:0 18px 30px -20px rgba(23,23,46,.4)}
+    nav ul.open{display:flex}
+    nav li{border-bottom:1px solid var(--line)}
+    nav a{display:block;padding:14px 0;font-size:16px}
+    nav a::after{display:none}
+    .burger{display:flex}
+    .sec{padding:58px 0}
+    .cards3,.strip{grid-template-columns:1fr}
+    .quote p{font-size:1.18rem}
+  }
+  @media(max-width:560px){
+    body{font-size:17px}
+    .steps{grid-template-columns:1fr}
+    .step{border-right:0}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .rv{opacity:1;transform:none}
+  }
+  @media print{
+    header.nav,.hero .mesh,.burger{display:none}
+    body{background:#fff;font-size:11pt}
+    .sec{padding:18px 0;break-inside:avoid}
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>📚 Recursos Académicos</h1>
-    <p class="sub">Gerardo Dos Ramos · Ciencia de Datos & BI</p>
-  </header>
 
-  <p>Bienvenido. Aquí encontrarás mis materiales de estudio y apuntes.</p>
+<a class="skip" href="#main">Saltar al contenido</a>
 
-  <div class="card">
-    <h2><a href="clase1.html">Clase 1 — Introducción</a></h2>
-    <p>Descripción breve del recurso.</p>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Gerardo Dos Ramos<span class="dot">.</span>
+      <small>Data &amp; Analytics</small></a>
+    <nav aria-label="Principal">
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="navlist" aria-label="Abrir menú">
+        <span></span>
+      </button>
+      <ul id="navlist">
+        <li><a href="#enfoque">Enfoque</a></li>
+        <li><a href="#trabajo">Trabajo</a></li>
+        <li><a href="#academia">Academia</a></li>
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <div class="card">
-    <h2>Próximamente</h2>
-    <p>Más recursos en camino.</p>
+<main id="main">
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="top">
+  <svg class="mesh" aria-hidden="true" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 620"></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow rv d1">Data &amp; Analytics · BI · Machine Learning · IA</p>
+      <h1 class="rv d2">Las empresas ya tienen los datos que necesitan. Aun así, <span class="mark">deciden a ciegas</span>.</h1>
+      <p class="lede rv d3">Llevo quince años cerrando esa brecha: convierto preguntas de negocio en indicadores, modelos y automatizaciones que <b>cambian una decisión concreta</b>. Hoy dirijo una práctica de Data &amp; Analytics y un equipo de cinco analistas.</p>
+      <p class="lede rv d3">Esta página es una muestra de ese trabajo.</p>
+      <div class="cta-row rv d4">
+        <a href="#trabajo" class="btn btn-primary">Ver el trabajo <span class="ar" aria-hidden="true">→</span></a>
+        <a href="#perfil" class="btn btn-ghost">Sobre mí</a>
+      </div>
+      <div class="proof rv d5">
+        <span class="chip on">15+ años en datos</span>
+        <span class="chip">7+ marcas líderes</span>
+        <span class="chip">Equipo de 5 analistas</span>
+        <span class="chip">Ph.D.(c) en Ciencia de Datos</span>
+      </div>
+    </div>
+
+    <figure class="portrait rv d3">
+      <div class="frame">
+        <span class="bracket" aria-hidden="true"></span>
+        <img src="assets/gerardo.jpg" width="740" height="925" loading="eager" decoding="async"
+             alt="Retrato de Gerardo Dos Ramos, Data &amp; Analytics Manager">
+      </div>
+      <figcaption class="cap"><b>Gerardo Dos Ramos</b> — Data &amp; Analytics Manager. Business Intelligence, machine learning y automatización con IA.</figcaption>
+    </figure>
   </div>
+</section>
 
-  <footer>Última actualización: 2026</footer>
+<div class="band">
+  <div class="wrap band-inner">
+    <b>Industrias:</b>
+    <span>Retail</span><span class="d">/</span>
+    <span>Consumo masivo</span><span class="d">/</span>
+    <span>Pharma</span><span class="d">/</span>
+    <span>Food service</span><span class="d">/</span>
+    <span>Formación corporativa</span>
+  </div>
+</div>
+
+<!-- ======================= ENFOQUE ======================= -->
+<section class="sec" id="enfoque">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Enfoque</p>
+      <h2>Empiezo por el final: la decisión.</h2>
+      <p>Los proyectos de datos rara vez fallan en el modelo. Fallan en la adopción: el tablero existe y nadie lo abre; el modelo predice bien y nadie lo usa. Por eso trabajo al revés — primero qué decisión va a cambiar, y desde ahí hacia atrás.</p>
+    </div>
+
+    <div class="steps rv d1">
+      <div class="step">
+        <div class="step-n">01</div>
+        <h3>La decisión</h3>
+        <p>Qué se decide hoy a ciegas, quién lo decide y cada cuánto. Sin una decisión concreta detrás no hay proyecto: hay un informe más.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <h3>La evidencia</h3>
+        <p>Qué datos existen, cuáles mienten y cuál es el mínimo confiable para partir. Sin esperar a que el warehouse esté perfecto: nunca lo está.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <h3>La solución</h3>
+        <p>El tablero, el modelo o la automatización más simple que resuelva esa decisión. Complejidad solo donde se paga sola.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <h3>La adopción</h3>
+        <p>Que se use. Formar al equipo, dejar documentación y medir si la decisión efectivamente cambió. Aquí se gana o se pierde todo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= TRABAJO ======================= -->
+<section class="sec sec--panel" id="trabajo">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Trabajo</p>
+      <h2>Tres proyectos, con la historia completa.</h2>
+      <p>Un porcentaje suelto no dice nada: lo que importa es qué estaba roto, qué se cambió y por qué el número se movió. Estos son proyectos que dirigí junto a mi equipo.</p>
+    </div>
+
+    <div class="cases">
+      <!-- EDITA: ajusta el contexto y la intervención al detalle real de cada proyecto -->
+      <article class="case rv d1">
+        <div class="kicker"><b>01</b>Formación corporativa · Retail</div>
+        <div>
+          <h3>El programa de formación se medía por asistencia, no por venta.</h3>
+          <dl>
+            <dt>Situación</dt>
+            <dd>Un programa con buena cobertura y buenos indicadores internos, pero sin evidencia de impacto en el negocio. Nadie podía responder si servía.</dd>
+            <dt>Qué hice</dt>
+            <dd>Rediseñé los indicadores comerciales: conecté la data de formación con la de venta por punto y período, y reemplacé métricas de actividad por métricas de resultado.</dd>
+          </dl>
+        </div>
+        <div class="outcome">
+          <div class="num">+7%</div>
+          <p>Ventas interanuales tras el rediseño de indicadores.</p>
+        </div>
+      </article>
+
+      <article class="case rv d1">
+        <div class="kicker"><b>02</b>Retail · 130 tiendas</div>
+        <div>
+          <h3>Los errores operativos se veían a fin de mes, cuando ya eran costo.</h3>
+          <dl>
+            <dt>Situación</dt>
+            <dd>Una red de 130 tiendas con errores dispersos y alta rotación de operadores nuevos. La información llegaba tarde y agregada, sin permitir actuar sobre la tienda concreta.</dd>
+            <dt>Qué hice</dt>
+            <dd>Construí el seguimiento por tienda y por operador, con alertas tempranas centradas en los primeros meses, y formé a las jefaturas para usarlo semanalmente.</dd>
+          </dl>
+        </div>
+        <div class="outcome">
+          <div class="num">−20%</div>
+          <p>Errores operativos, con −10% de rotación de operadores nuevos.</p>
+        </div>
+      </article>
+
+      <article class="case rv d1">
+        <div class="kicker"><b>03</b>Consumo masivo · Abastecimiento</div>
+        <div>
+          <h3>El pronóstico de demanda vivía en una planilla y en la intuición del equipo.</h3>
+          <dl>
+            <dt>Situación</dt>
+            <dd>Proyecciones por promedios históricos que no capturaban estacionalidad ni promociones, con el costo clásico: quiebres de stock por un lado, sobrestock por el otro.</dd>
+            <dt>Qué hice</dt>
+            <dd>Desarrollé modelos predictivos en Python integrando estacionalidad, promociones y variables externas, y los dejé operando dentro del proceso de planificación existente.</dd>
+          </dl>
+        </div>
+        <div class="outcome">
+          <div class="num">+25%</div>
+          <p>Precisión del pronóstico respecto del método anterior.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="strip rv d2">
+      <div>
+        <div class="num"><em>−30%</em></div>
+        <p>Tiempo de reporting ejecutivo, automatizando con Power BI</p>
+      </div>
+      <div>
+        <div class="num"><em>+18%</em></div>
+        <p>Eficiencia con modelos predictivos en una solución BI para 5.000+ empleados</p>
+      </div>
+      <div>
+        <div class="num"><em>7+</em></div>
+        <p>Marcas líderes en Chile a lo largo de 15+ años</p>
+      </div>
+    </div>
+
+    <p class="note rv d2">Los resultados provienen de proyectos dirigidos junto a mi equipo. Metodología, línea base y forma de medición los puedo detallar en conversación, dentro de lo que permitan los acuerdos de confidencialidad.</p>
+  </div>
+</section>
+
+<!-- ======================= ACADEMIA ======================= -->
+<section class="sec" id="academia">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Investigación · Difusión · Academia</p>
+      <h2>Mantenerme al día es parte del oficio.</h2>
+      <p>Como parte de mi desarrollo industrial y profesional, me mantengo en actualización continua y participo de forma activa en actividades docentes. Investigar, difundir y enseñar no son un desvío del trabajo con datos: son lo que lo mantiene afilado.</p>
+    </div>
+    <div class="cards3">
+      <div class="card rv d1">
+        <div class="k">Investigación</div>
+        <h3>Investigación doctoral</h3>
+        <p>Curso un doctorado en Ciencia de Datos, en paralelo al trabajo. Estar cerca de la investigación de frontera es lo que mantiene fresco y con criterio lo que llevo a las empresas.</p>
+      </div>
+      <div class="card rv d2">
+        <div class="k">Docencia</div>
+        <h3>Clases universitarias</h3>
+        <p>Hago docencia a nivel universitario: llevar lo complejo a un lenguaje claro para quienes recién entran al oficio de los datos, sin refugiarme en la jerga.</p>
+      </div>
+      <div class="card rv d3">
+        <div class="k">Formación</div>
+        <h3>Entrenamientos corporativos</h3>
+        <p>Entreno a equipos comerciales y de operaciones dentro de las empresas, para que aprendan a leer datos y a hacer mejores preguntas con ellos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PERFIL ======================= -->
+<section class="sec" id="perfil">
+  <div class="wrap">
+    <div class="prof-grid">
+      <div>
+        <div class="head rv" style="margin-bottom:28px">
+          <p class="eyebrow">Perfil</p>
+          <h2>Data &amp; Analytics Manager.</h2>
+        </div>
+        <p class="bio rv d1">Soy Gerardo Dos Ramos. Llevo más de quince años moviéndome entre tres mundos que rara vez se hablan: la operación, la academia y la consultoría. Esa mezcla es lo que traigo — sé lo que aguanta un turno de tienda, lo que exige el rigor académico y lo que necesita un directorio.</p>
+        <p class="bio rv d2">Hoy dirijo una práctica de Data &amp; Analytics y un equipo de cinco analistas, y en paralelo curso un doctorado en Ciencia de Datos. Construyo la capa que la automatización no reemplaza: decidir qué vale la pena automatizar, y ejecutarlo con IA, Python y orquestadores de flujos.</p>
+
+        <div class="quote rv d3">
+          <p>La IA amplifica a quien hace las preguntas correctas. Mi ventaja no es competir con ella — es dirigirla.</p>
+        </div>
+
+        <div class="stack-wrap rv d4">
+          <h4>Herramientas de trabajo</h4>
+          <div class="stack">
+            <span>Python</span><span>SQL</span><span>Power BI</span><span>Tableau</span>
+            <span>scikit-learn</span><span>TensorFlow</span><span>AWS</span><span>Docker</span>
+            <span>n8n</span><span>Apps Script</span><span>LLMs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv d2">
+        <ul class="tl">
+          <!-- EDITA: ajusta años y cargos a tu trayectoria real -->
+          <li>
+            <span class="y">Hoy</span>
+            <span class="t">Data &amp; Analytics Manager</span>
+            <span class="s">Dirección de la práctica de datos y de un equipo de cinco analistas.</span>
+          </li>
+          <li>
+            <span class="y">En curso</span>
+            <span class="t">Ph.D.(c) en Ciencia de Datos</span>
+            <span class="s">Doctorado en curso, en paralelo al trabajo.</span>
+          </li>
+          <li>
+            <span class="y">15+ años</span>
+            <span class="t">Consultoría y operaciones</span>
+            <span class="s">BI, machine learning e ingeniería de datos para 7+ marcas líderes en Chile.</span>
+          </li>
+          <li>
+            <span class="y">En paralelo</span>
+            <span class="t">Docencia</span>
+            <span class="s">Formación de analistas y de equipos comerciales dentro de las empresas.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACTO ======================= -->
+<section class="sec sec--panel" id="contacto">
+  <div class="wrap">
+    <div class="head rv" style="margin-bottom:0">
+      <span class="avail"><span class="dot" aria-hidden="true"></span>Abierto a conversar</span>
+      <h2>Si algo de esto te sirve, escríbeme.</h2>
+      <p>Hoy estoy a cargo de una práctica de datos y ahí estoy bien. Pero si tienes un proyecto que valga la pena, una duda técnica o simplemente quieres conversar de datos, la puerta está abierta. Respondo yo.</p>
+      <div class="contact-links rv d1">
+        <a href="mailto:2ramosmanuel@gmail.com" class="btn btn-primary">2ramosmanuel@gmail.com</a>
+        <a href="https://www.linkedin.com/in/gerardo2ramos/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span class="mono">gerardodosramos.com</span>
+    <span>Data &amp; Analytics · BI, ML e IA — Santiago, Chile</span>
+    <span class="mono">© <span id="yr">2026</span> Gerardo Dos Ramos</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Gerardo Dos Ramos",
+  "jobTitle":"Data & Analytics Manager",
+  "description":"Data & Analytics Manager con más de 15 años en business intelligence, machine learning y automatización con IA.",
+  "url":"https://gerardodosramos.com/",
+  "image":"https://gerardodosramos.com/assets/gerardo.jpg",
+  "email":"mailto:2ramosmanuel@gmail.com",
+  "sameAs":["https://www.linkedin.com/in/gerardo2ramos/"],
+  "knowsAbout":["Business Intelligence","Machine Learning","Power BI","Python","SQL","Automatización con IA","Ingeniería de datos","Formación corporativa"],
+  "knowsLanguage":["es","en"],
+  "address":{"@type":"PostalAddress","addressCountry":"CL"}
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* menú móvil */
+  var burger = document.getElementById("burger"), list = document.getElementById("navlist");
+  if (burger && list){
+    burger.addEventListener("click", function(){
+      var open = list.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    });
+    list.addEventListener("click", function(e){
+      if (e.target.tagName === "A"){
+        list.classList.remove("open");
+        burger.setAttribute("aria-expanded","false");
+      }
+    });
+  }
+
+  /* reveal al hacer scroll */
+  var rvs = document.querySelectorAll(".rv");
+  if (reduce || !("IntersectionObserver" in window)){
+    Array.prototype.forEach.call(rvs, function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
+    Array.prototype.forEach.call(rvs, function(el){ io.observe(el); });
+  }
+
+  /* sección activa en el nav */
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav ul a[href^="#"]'));
+  var secs  = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  function spy(){
+    var y = window.scrollY + 120, active = -1;
+    secs.forEach(function(s,i){ if (s && s.offsetTop <= y) active = i; });
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) active = links.length - 1;
+    links.forEach(function(a,i){
+      if (i === active) a.setAttribute("aria-current","true"); else a.removeAttribute("aria-current");
+    });
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function(){
+    if (!ticking){ window.requestAnimationFrame(function(){ spy(); ticking = false; }); ticking = true; }
+  }, {passive:true});
+  spy();
+
+  /* malla de nodos del hero */
+  (function mesh(){
+    var svg = document.querySelector(".hero .mesh");
+    if (!svg) return;
+    var W = 1200, H = 620, seed = 7;
+    function rnd(){ seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }
+    var nodes = [], i, j, parts = [];
+    for (i = 0; i < 26; i++) nodes.push({x: rnd()*W, y: rnd()*H, r: 1.5 + rnd()*2.4});
+    for (i = 0; i < nodes.length; i++){
+      for (j = i+1; j < nodes.length; j++){
+        var dx = nodes[i].x-nodes[j].x, dy = nodes[i].y-nodes[j].y;
+        var d = Math.sqrt(dx*dx+dy*dy);
+        if (d < 190){
+          parts.push('<line x1="'+nodes[i].x.toFixed(1)+'" y1="'+nodes[i].y.toFixed(1)+
+                     '" x2="'+nodes[j].x.toFixed(1)+'" y2="'+nodes[j].y.toFixed(1)+
+                     '" stroke="#17172e" stroke-opacity="'+(0.16*(1-d/190)).toFixed(3)+'" stroke-width="1"/>');
+        }
+      }
+    }
+    nodes.forEach(function(n,k){
+      var c = (k % 5 === 0) ? "#a8660d" : "#17172e";
+      var o = (k % 5 === 0) ? .5 : .22;
+      parts.push('<circle cx="'+n.x.toFixed(1)+'" cy="'+n.y.toFixed(1)+'" r="'+n.r.toFixed(1)+
+                 '" fill="'+c+'" fill-opacity="'+o+'"/>');
+    });
+    svg.innerHTML = parts.join("");
+  })();
+})();
+</script>
 </body>
 </html>
